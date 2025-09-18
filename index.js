@@ -60,3 +60,8 @@ setInterval(async () => {
     console.log(`⚠️ Self-ping failed: ${err.message}`);
   }
 }, 4 * 60 * 1000);
+
+app.get('/', (req, res) => {
+    console.log(`🏓 Ping received at ${new Date().toISOString()} from ${req.ip}`);
+    res.send('Bot is alive!');
+});
